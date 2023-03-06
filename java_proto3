@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+message ZKPRequest {
+    uint64 number = 1;
+    bytes commitment = 2;
+}
+
+message ZKPResponse {
+    bool result = 1;
+}
+
+service ZKP {
+    rpc Verify(ZKPRequest) returns (ZKPResponse);
+}
